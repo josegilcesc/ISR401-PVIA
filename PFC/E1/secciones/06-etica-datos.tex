@@ -1,5 +1,49 @@
 % Sección a cargo de: Arteaga Alava Danela Dayana
 \section{Ética y tratamiento de datos}\label{sec:etica}
 
-Sección en elaboración.
+Las entrevistas recogen la voz, las opiniones y, al cierre, el teléfono de los participantes. Son datos personales cuyo tratamiento regulan la Ley Orgánica de Protección de Datos Personales~\cite{lopdp2021} y su reglamento~\cite{reglamentolopdp2023}. El equipo aplica tres medidas: consentimiento informado antes de cada sesión, anonimización de lo que se publica y custodia restringida de los originales.
 
+\subsection{Consentimiento informado}
+
+El equipo elaboró el formulario PFC-ISR401-POSIA-A03 (versión 1.0 del 5 de noviembre de 2026), cuya versión pública está en el Anexo~\ref{anx:consentimiento}. El formulario explica el propósito, las actividades, los riesgos y los beneficios; reconoce los derechos de acceso, rectificación, eliminación y oposición de la LOPDP; y separa en nueve autorizaciones específicas lo que el participante acepta, de modo que puede, por ejemplo, participar sin autorizar la grabación. Incluye un desprendible para revocar el consentimiento y se firma en dos ejemplares, uno para el participante y otro para el expediente del proyecto.
+
+En las tres entrevistas, realizadas el 19 de noviembre de 2026, el entrevistador leyó el guion de apertura del Anexo~\ref{anx:entrevista}, entregó el formulario y esperó la firma antes de comenzar con las preguntas. Los tres participantes autorizaron la grabación en audio.
+
+Durante la revisión de las grabaciones se identificaron dos situaciones que el equipo corrige:
+
+\begin{itemize}
+\item \textbf{Grabación previa al consentimiento.} En la sesión ACTA-ELI-ADM-01 la grabadora quedó encendida antes de la lectura del consentimiento y captó una conversación previa ajena a la entrevista. Ese fragmento no se transcribe, no se analiza y se recorta del audio antes de su custodia. Desde ahora la grabación se inicia solo después de la firma.
+\item \textbf{Dato no cubierto por las autorizaciones.} Al cierre de la sesión ACTA-ELI-CAJ-01 se pidió a la participante un correo de contacto, pero el formulario solo contempla el registro del número de teléfono (autorización e). El correo se elimina del registro y el guion de cierre se limita al teléfono, y solo si la autorización e) fue marcada.
+\end{itemize}
+
+\subsection{Anonimización}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*]
+\item Cada sesión se identifica con un código (ACTA-ELI-CAJ-01, ACTA-ELI-CAJ-02, ACTA-ELI-ADM-01) y cada participante con su rol genérico (SH-01, SH-03, SH-04), como establece la sección~5 del formulario. Los nombres, cédulas, firmas y cargos específicos no aparecen en el documento ni en el repositorio.
+\item En las transcripciones se reemplazan por \texttt{[establecimiento]}, \texttt{[compañera de trabajo]} o \texttt{[cliente]} el nombre del local, los nombres de terceros mencionados por los participantes y cualquier dato que permita identificarlos.
+\item La identidad de la organización tampoco se publica: la versión pública del formulario omite su nombre y su dirección.
+\item El documento cita hallazgos y paráfrasis, no fragmentos largos de las transcripciones. Una frase textual solo se cita si el participante marcó la autorización f).
+\end{enumerate}
+
+\subsection{Custodia de evidencias}
+
+La custodia sigue lo comprometido en la sección~5 del formulario (Tabla~\ref{tab:custodia}).
+
+\begin{table}[H]
+\centering
+\caption{Custodia de las evidencias de campo.}
+\label{tab:custodia}
+\small
+\begin{tabularx}{\textwidth}{@{}L{3.6cm}L{3.6cm}X@{}}
+\toprule
+\textbf{Evidencia} & \textbf{Dónde se guarda} & \textbf{Regla} \\
+\midrule
+Formularios de consentimiento firmados y carta de aceptación & Archivo cifrado en la carpeta institucional restringida & Se escanean en PDF. La contraseña del archivo cifrado solo la conoce el docente responsable. \\
+Grabaciones originales de audio & Mismo archivo cifrado & Nunca se suben al repositorio público. \\
+Transcripciones anonimizadas & Carpeta institucional restringida & Se revisan con la regla de anonimización antes de compartirlas con el docente. \\
+Registro de cada archivo & \texttt{evidencias/MANIFIESTO.md} en el repositorio & Nombre del archivo, fecha, duración y huella SHA-256, para comprobar que el archivo no cambió. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+El material identificable se conserva como máximo 24 meses desde el cierre del periodo académico y luego se destruye. Solo se conservan los instrumentos en blanco y los resultados totalmente anonimizados. Si un participante entrega el desprendible de revocación, sus datos se eliminan siempre que aún no se hayan integrado en resultados agregados, y la eliminación se registra en el manifiesto.

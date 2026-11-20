@@ -1,0 +1,45 @@
+% Fuente editable de la matriz poder-interés (TikZ).
+% Se incluye en secciones/03-partes-interesadas.tex con \input.
+% Para mover un rol, cambiar sus coordenadas (x = interés, y = poder; 0 a 10).
+\begin{tikzpicture}[
+  x=0.75cm, y=0.6cm,
+  rol/.style={draw, rounded corners=2pt, fill=white, font=\scriptsize\bfseries, inner sep=2pt},
+  cuadrante/.style={font=\small\itshape, text=black!60}
+]
+  % Cuadrantes
+  \fill[green!12]  (5,5) rectangle (10,10);
+  \fill[yellow!15] (0,5) rectangle (5,10);
+  \fill[blue!8]    (5,0) rectangle (10,5);
+  \fill[black!5]   (0,0) rectangle (5,5);
+  \draw[thick] (0,0) rectangle (10,10);
+  \draw (5,0) -- (5,10);
+  \draw (0,5) -- (10,5);
+
+  % Nombres de los cuadrantes
+  \node[cuadrante] at (7.5,9.4) {Gestionar de cerca};
+  \node[cuadrante] at (2.5,9.4) {Mantener satisfecho};
+  \node[cuadrante] at (7.5,4.55) {Mantener informado};
+  \node[cuadrante] at (2.5,4.55) {Monitorear};
+
+  % Ejes
+  \draw[-{Stealth}] (0,-0.6) -- (10.4,-0.6) node[right, font=\small] {Interés};
+  \draw[-{Stealth}] (-0.6,0) -- (-0.6,10.4) node[above, font=\small] {Poder};
+  \node[font=\scriptsize, below] at (0.5,-0.6) {Bajo};
+  \node[font=\scriptsize, below] at (9.5,-0.6) {Alto};
+  \node[font=\scriptsize, left] at (-0.6,0.5) {Bajo};
+  \node[font=\scriptsize, left] at (-0.6,9.5) {Alto};
+
+  % Partes interesadas (x = interés, y = poder)
+  \node[rol] at (9.0,8.5) {SH-03};
+  \node[rol] at (7.2,7.6) {SH-02};
+  \node[rol] at (2.0,8.0) {SH-11};
+  \node[rol] at (3.4,5.8) {SH-10};
+  \node[rol] at (9.0,3.5) {SH-01};
+  \node[rol] at (8.2,2.6) {SH-04};
+  \node[rol] at (6.6,3.2) {SH-05};
+  \node[rol] at (6.3,1.5) {SH-06};
+  \node[rol] at (3.6,3.2) {SH-07};
+  \node[rol] at (3.4,1.4) {SH-08};
+  \node[rol] at (1.4,3.6) {SH-09};
+  \node[rol] at (1.4,1.4) {SH-12};
+\end{tikzpicture}

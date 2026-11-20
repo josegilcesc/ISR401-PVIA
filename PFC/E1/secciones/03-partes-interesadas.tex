@@ -5,33 +5,98 @@ La norma ISO/IEC/IEEE 29148:2018 considera parte interesada a toda persona u org
 
 \subsection{Identificación de las partes interesadas}
 
-La Tabla~\ref{tab:stakeholders} presenta los diez roles identificados para \organizacion{}. Los identificadores SH-01 a SH-03 se conservan de la práctica de la Unidad~I y de la guía de entrevistas ACTA-ELI-01 para mantener la trazabilidad con los instrumentos de elicitación. La influencia es preliminar y la disponibilidad se confirmará con la administración del establecimiento.
+La lista preliminar de diez roles se revisó con las tres entrevistas. Las entrevistas mostraron roles que no se habían considerado: el vendedor nuevo, que tiene necesidades distintas a las de la cajera con experiencia; el digitador que ingresa la información al sistema; la gerente que coordina pedidos y reposición; los técnicos de campo de la empresa; y tres tipos de cliente con precios distintos. También mostraron que el local no menciona un contador externo ni un encargado de bodega, por lo que esos roles se retiraron. La Tabla~\ref{tab:stakeholders} presenta los doce roles resultantes, con la entrevista que respalda cada uno. Los identificadores SH-01 a SH-03 coinciden con los de la guía de entrevistas ACTA-ELI-01.
 
 \small
-\begin{longtable}{@{}L{1.3cm}L{3.2cm}L{2.0cm}L{5.2cm}L{1.9cm}@{}}
-\caption{Partes interesadas del sistema (versión preliminar).}\label{tab:stakeholders}\\
+\begin{longtable}{@{}L{1.2cm}L{3.0cm}L{6.4cm}L{2.6cm}@{}}
+\caption{Partes interesadas del sistema.}\label{tab:stakeholders}\\
 \toprule
-\textbf{ID} & \textbf{Rol} & \textbf{Tipo} & \textbf{Interés principal en el sistema} & \textbf{Influencia} \\
+\textbf{ID} & \textbf{Rol} & \textbf{Interés principal en el sistema} & \textbf{Fuente} \\
 \midrule
 \endfirsthead
 \toprule
-\textbf{ID} & \textbf{Rol} & \textbf{Tipo} & \textbf{Interés principal en el sistema} & \textbf{Influencia} \\
+\textbf{ID} & \textbf{Rol} & \textbf{Interés principal en el sistema} & \textbf{Fuente} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-SH-01 & Cajero o vendedor de mostrador & Interno, usuario directo & Cobrar rápido en horas pico y contar con apoyo para recomendar productos compatibles o sustitutos. & Baja \\
-SH-02 & Administrador del local & Interno, usuario directo & Controlar el inventario, los precios y las ventas diarias; evitar diferencias entre el sistema y la percha. & Alta \\
-SH-03 & Propietario del establecimiento & Interno, patrocinador & Reducir el tiempo de atención y las ventas perdidas con un costo de operación aceptable. & Alta \\
-SH-04 & Cliente electricista o contratista & Externo, beneficiario & Recibir el material correcto, cotizaciones ágiles y factura con sus datos. & Media \\
-SH-05 & Contador externo del establecimiento & Externo, usuario indirecto & Disponer de comprobantes, anulaciones y notas de crédito trazables para las declaraciones tributarias. & Media \\
-SH-06 & Cliente particular (consumidor final) & Externo, beneficiario & Ser atendido sin demora y recibir orientación sobre qué material comprar. & Baja \\
-SH-07 & Encargado de bodega & Interno, usuario directo & Ubicar productos, registrar ingresos de mercadería y mantener el stock real actualizado. & Media \\
-SH-08 & Servicio de Rentas Internas (SRI) & Externo, regulador & Que cada venta se respalde con un comprobante electrónico autorizado conforme a la normativa vigente. & Alta \\
-SH-09 & Proveedor o distribuidor de material eléctrico & Externo, indirecto & Recibir pedidos de reposición claros y oportunos. & Baja \\
-SH-10 & Técnico de soporte informático del local & Externo, soporte & Instalar y mantener el sistema y sus periféricos (lector de código de barras, impresora térmica) con poco esfuerzo. & Baja \\
+SH-01 & Cajera-vendedora con experiencia & Atender sola el mostrador de 08:00 a 18:00: recibe mercadería, percha, ingresa y factura. Asesora a cada cliente según su necesidad y conoce los precios de memoria. & ACTA-ELI-CAJ-01 \\
+SH-02 & Gerente o administradora & Coordinar los pedidos, la rotación y la reposición de mercadería. & ACTA-ELI-ADM-01 \\
+SH-03 & Propietario & Mantener la asesoría técnica como valor del negocio y la competitividad frente a Santo Domingo y Guayaquil, con un sistema que se adapte a su forma de trabajar. & ACTA-ELI-ADM-01 \\
+SH-04 & Vendedor nuevo & Responder consultas técnicas sin conocer todavía el catálogo; hoy tarda de cinco a diez minutos revisando catálogos de marcas. & ACTA-ELI-CAJ-02 \\
+SH-05 & Digitador de inventario & Ingresar y registrar la información de los productos en el sistema y cuadrarla con la existencia física. & ACTA-ELI-ADM-01 \\
+SH-06 & Cliente integrador (técnico, electricista o ingeniero) & Obtener el material correcto con precio de integrador; si no lo obtiene, compra en otra ciudad. & ACTA-ELI-ADM-01 \\
+SH-07 & Cliente final (hogar) & Recibir orientación sobre bombas, instalaciones y mantenimiento de su vivienda. & ACTA-ELI-CAJ-01, ACTA-ELI-CAJ-02 \\
+SH-08 & Cliente corporativo con crédito (haciendas, constructoras, empresas) & Facturar a la razón social correcta y comprar a crédito con un cupo asignado. & ACTA-ELI-ADM-01 \\
+SH-09 & Técnico de campo de la empresa & Recibir los materiales para instalaciones, perforación de pozos y tableros; hoy no tiene acceso al sistema. & ACTA-ELI-ADM-01 \\
+SH-10 & Proveedor del sistema contable actual & Mantener su sistema operativo y actualizado con los cambios del SRI. & ACTA-ELI-CAJ-01, ACTA-ELI-ADM-01 \\
+SH-11 & Servicio de Rentas Internas (SRI) & Que cada venta tenga su comprobante electrónico autorizado. & ACTA-ELI-ADM-01 \\
+SH-12 & Proveedores de material eléctrico & Recibir pedidos de reposición; el propietario los contacta para conseguir en 24 horas lo que no tiene en stock. & ACTA-ELI-ADM-01 \\
 \end{longtable}
 \normalsize
 
-% Pendiente (viernes): disponibilidad de cada rol confirmada con la administración,
-% matriz poder-interés (fuente en modelos/) y estrategia de participación por rol.
+\subsection{Influencia y disponibilidad}
+
+La Tabla~\ref{tab:disponibilidad} registra el poder, el interés y la disponibilidad de cada rol. La disponibilidad se tomó de lo observado y dicho en las entrevistas; los roles que no fueron entrevistados se marcan como \emph{por confirmar}.
+
+\begin{table}[H]
+\centering
+\caption{Poder, interés y disponibilidad de las partes interesadas.}
+\label{tab:disponibilidad}
+\small
+\begin{tabularx}{\textwidth}{@{}L{1.2cm}L{1.2cm}L{1.3cm}X@{}}
+\toprule
+\textbf{ID} & \textbf{Poder} & \textbf{Interés} & \textbf{Disponibilidad} \\
+\midrule
+SH-01 & Bajo & Alto & En el local de 08:00 a 18:00, casi siempre sola; disponible fuera de la hora pico de 11:00 a 15:00 y en sesiones cortas. \\
+SH-02 & Alto & Alto & Por confirmar con el propietario. \\
+SH-03 & Alto & Alto & Dispuesto a conversar y a revisar un prototipo, con tiempo limitado por su trabajo en campo. \\
+SH-04 & Bajo & Alto & Disponible en el local; recién incorporado. \\
+SH-05 & Bajo & Medio & Por confirmar con el propietario. \\
+SH-06 & Bajo & Medio & Visita el local; se puede abordar con el cuestionario en mostrador. \\
+SH-07 & Bajo & Bajo & Visita el local; cuestionario breve en mostrador. \\
+SH-08 & Bajo & Bajo & Contacto indirecto a través del propietario. \\
+SH-09 & Bajo & Bajo & Trabaja en campo; disponibilidad baja. \\
+SH-10 & Medio & Bajo & No contactado; contacto a través del propietario. \\
+SH-11 & Alto & Bajo & No participa en sesiones; se consulta su normativa publicada. \\
+SH-12 & Bajo & Bajo & Contacto a través de la gerente. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Matriz poder--interés}
+
+La matriz poder--interés agrupa a las partes interesadas según su capacidad de influir en el proyecto y su interés en el resultado, para decidir con qué intensidad se involucra a cada una~\cite{pmbok2021}. La Figura~\ref{fig:matriz} muestra la ubicación de los doce roles; su fuente editable está en \texttt{modelos/matriz-poder-interes.tex}.
+
+\begin{figure}[H]
+\centering
+\input{modelos/matriz-poder-interes}
+\caption{Matriz poder--interés de las partes interesadas de la PVIA.}
+\label{fig:matriz}
+\end{figure}
+
+La matriz ubica a la cajera con experiencia (SH-01) en el cuadrante de bajo poder, pero su conocimiento es la principal fuente sobre cómo se asesora al cliente, y su rechazo a que el sistema sugiera sustitutos coincide con el del propietario. Por eso la estrategia para SH-01 va más allá de mantenerla informada.
+
+\subsection{Estrategia de participación}
+
+\begin{table}[H]
+\centering
+\caption{Estrategia de participación por parte interesada.}
+\label{tab:estrategia}
+\small
+\begin{tabularx}{\textwidth}{@{}L{1.2cm}L{2.4cm}X@{}}
+\toprule
+\textbf{ID} & \textbf{Estrategia} & \textbf{Acciones concretas} \\
+\midrule
+SH-03 & Gestionar de cerca & Validar con él el alcance y la zona gris; presentar avances solo al cierre de cada fase; respetar su condición de que el prototipo no afecte la facturación ante el SRI. \\
+SH-02 & Gestionar de cerca & Entrevista sobre pedidos, rotación y reposición; revisión de los reportes propuestos. \\
+SH-01 & Mantener informada y participación activa & Fuente experta: observación en sitio y taller de alternativas. Sesiones cortas fuera de la hora pico, sin interrumpir su atención. \\
+SH-04 & Mantener informado & Cuestionario y prueba del prototipo de búsqueda, porque es el principal beneficiario de la asesoría asistida. \\
+SH-05 & Mantener informado & Entrevista breve sobre el ingreso de productos y las diferencias entre sistema y percha. \\
+SH-06 & Mantener informado & Cuestionario en mostrador sobre nombres locales de los materiales y tiempos de atención. \\
+SH-07, SH-08 & Monitorear & Cuestionario breve; los datos de facturación de SH-08 se consultan con el propietario. \\
+SH-09, SH-12 & Monitorear & Consulta indirecta a través de la gerente. \\
+SH-10, SH-11 & Mantener satisfecho & Revisión documental de la integración actual y de la normativa de comprobantes electrónicos; no se modifica la emisión vigente sin acuerdo del propietario. \\
+\bottomrule
+\end{tabularx}
+\end{table}
