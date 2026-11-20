@@ -1,5 +1,33 @@
 % Sección a cargo de: Cedeño Avila Winston Damian
 \section{Contexto del sistema}\label{sec:contexto}
 
-Sección en elaboración.
+Pohl define el contexto de un sistema como la parte de su entorno que es relevante para definir y comprender sus requisitos, y separa el sistema de ese contexto mediante el límite del sistema~\cite{pohl2025}. Entre lo que claramente pertenece al sistema y lo que claramente queda fuera existe una zona gris que se va aclarando a medida que avanza la elicitación~\cite{pohl2025,ireb2026}.
 
+\subsection{Límite del sistema}
+
+Dentro del límite de la \sistemacorto{} quedan el registro de ventas en mostrador, el control de inventario, la preparación de las consultas de recomendación sobre el catálogo local y el registro de auditoría de las operaciones. Fuera del límite quedan los actores humanos y los sistemas externos que solo intercambian información con la plataforma a través de interfaces.
+
+\subsection{Entidades externas}
+
+La Tabla~\ref{tab:externas} lista los sistemas y dispositivos externos identificados en la práctica de la Unidad~I. Los actores humanos que interactúan con el sistema son los roles SH-01, SH-02, SH-03, SH-05 y SH-07 de la Tabla~\ref{tab:stakeholders}.
+
+\begin{table}[H]
+\centering
+\caption{Sistemas y dispositivos externos en el límite del sistema (versión preliminar).}
+\label{tab:externas}
+\small
+\begin{tabularx}{\textwidth}{@{}L{1.4cm}L{3.6cm}X@{}}
+\toprule
+\textbf{ID} & \textbf{Entidad externa} & \textbf{Información intercambiada} \\
+\midrule
+EXT-01 & Servicio externo de inferencia de IA & Envía la consulta técnica con los parámetros del catálogo disponible; recibe sugerencias de productos con su justificación de equivalencia. \\
+EXT-02 & Plataforma de comprobantes electrónicos del SRI & Envía el comprobante electrónico firmado; recibe el mensaje de recepción y autorización. \\
+EXT-03 & Pasarela de cobros electrónicos & Envía la solicitud de cobro con el monto total; recibe la aprobación o el rechazo. \\
+EXT-04 & Lector óptico de código de barras & Entrega al sistema el código del producto leído. \\
+EXT-05 & Impresora térmica de comprobantes & Recibe del sistema el detalle del comprobante de venta para imprimirlo. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% Pendiente (viernes): diagrama de contexto exportado desde modelos/diagrama-contexto.puml
+% a figuras/, tabla de las ocho perspectivas con hallazgos de la organización.

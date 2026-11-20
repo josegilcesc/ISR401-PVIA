@@ -1,0 +1,41 @@
+@startuml diagrama-contexto
+' Diagrama de contexto - PFC Entrega 1 (borrador)
+' Exportar a PNG en PFC/E1/figuras/diagrama-contexto.png
+left to right direction
+skinparam shadowing false
+skinparam rectangle {
+  BackgroundColor #EAF4EA
+  BorderColor #1B5E20
+}
+
+actor "Cajero / vendedor\n(SH-01)" as cajero
+actor "Administrador\n(SH-02)" as admin
+actor "Propietario\n(SH-03)" as prop
+actor "Contador externo\n(SH-05)" as conta
+actor "Encargado de bodega\n(SH-07)" as bodega
+
+rectangle "Plataforma de Ventas con\nMódulo de Recomendación IA" as sistema
+
+node "Servicio de inferencia IA\n(EXT-01)" as ia
+node "Comprobantes electrónicos SRI\n(EXT-02)" as sri
+node "Pasarela de cobros\n(EXT-03)" as pago
+node "Lector de código de barras\n(EXT-04)" as lector
+node "Impresora térmica\n(EXT-05)" as impresora
+
+cajero --> sistema : venta, consulta de producto
+sistema --> cajero : total, sugerencias
+admin --> sistema : precios, ajustes de inventario
+sistema --> admin : reportes de ventas y stock
+sistema --> prop : reportes gerenciales
+sistema --> conta : comprobantes, notas de crédito
+bodega --> sistema : ingresos de mercadería
+
+lector --> sistema : código del producto
+sistema --> impresora : comprobante de venta
+sistema --> ia : consulta técnica
+ia --> sistema : sugerencias
+sistema --> sri : comprobante firmado
+sri --> sistema : autorización
+sistema --> pago : solicitud de cobro
+pago --> sistema : aprobación / rechazo
+@enduml
