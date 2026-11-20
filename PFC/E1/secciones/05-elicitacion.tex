@@ -16,14 +16,88 @@ La Tabla~\ref{tab:criterio-tecnicas} relaciona el tipo de conocimiento con las t
 \toprule
 \textbf{Conocimiento} & \textbf{Técnica} & \textbf{Uso en el proyecto} \\
 \midrule
-Consciente & Entrevista semiestructurada (Anexo~\ref{anx:entrevista}) & Obtener del administrador, del propietario y de los vendedores el flujo de venta, las reglas de inventario y las expectativas sobre el sistema. \\
-Consciente, varios informantes & Cuestionario (Anexo~\ref{anx:cuestionario}) & Cuantificar con varios vendedores y clientes la frecuencia de consultas técnicas, demoras y productos agotados. \\
+Consciente & Entrevista semiestructurada (Anexo~\ref{anx:entrevista}) & Obtener del propietario, de la gerente y de los vendedores el flujo de venta, las reglas de inventario y las expectativas sobre el sistema. \\
+Consciente, varios informantes & Cuestionario (Anexo~\ref{anx:cuestionario}) & Cuantificar con vendedores y clientes la frecuencia de consultas técnicas, regresos por complementos y anulaciones. \\
 Inconsciente (tácito) & Observación directa en mostrador (Anexo~\ref{anx:observacion}) & Registrar transacciones reales en hora pico para contrastar lo declarado en la entrevista con lo que ocurre en la práctica. \\
 Subconsciente & Taller con presentación de alternativas & Mostrar al personal formas posibles de presentar las sugerencias de productos y recoger reacciones antes de especificar. \\
+Normativo & Análisis documental & Revisar la normativa de comprobantes electrónicos y la documentación del sistema contable actual. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-% Pendiente (viernes): asignación de técnica a cada parte interesada de la
-% Tabla de partes interesadas con su justificación, cronograma de sesiones y
-% artefactos esperados de cada sesión.
+\subsection{Técnica por parte interesada}
+
+La Tabla~\ref{tab:tecnica-sh} asigna las técnicas a cada parte interesada de la Tabla~\ref{tab:stakeholders} y justifica la elección con lo observado en las entrevistas.
+
+\small
+\begin{longtable}{@{}L{1.5cm}L{3.3cm}L{8.8cm}@{}}
+\caption{Técnicas de elicitación por parte interesada.}\label{tab:tecnica-sh}\\
+\toprule
+\textbf{ID} & \textbf{Técnicas} & \textbf{Justificación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Técnicas} & \textbf{Justificación} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+SH-01 & Entrevista (realizada), observación, taller & Su conocimiento es tácito: asesora conversando con el cliente y sabe los precios de memoria, por lo que no lo describe completo en una entrevista (ACTA-ELI-CAJ-01). La observación lo hace visible y el taller recoge su criterio sobre las sugerencias. \\
+SH-02 & Entrevista (ficha B, bloque B1) & Coordina pedidos, rotación y reposición; es conocimiento explícito que puede expresar. \\
+SH-03 & Entrevista (realizada), taller, validación & Decide sobre el alcance y desconfía de la IA (ACTA-ELI-ADM-01); necesita ver alternativas concretas antes de aceptarlas. \\
+SH-04 & Entrevista (realizada), cuestionario, prueba del prototipo & Es el principal beneficiario de la asesoría asistida; el cuestionario cuantifica sus tiempos de consulta. \\
+SH-05 & Entrevista breve & Conoce cómo se ingresan los productos y por qué el sistema no cuadra con la existencia física (ACTA-ELI-ADM-01). \\
+SH-06, SH-07 & Cuestionario en mostrador & Son muchos y pasan poco tiempo en el local; un cuestionario corto obtiene los nombres locales que usan y su experiencia de espera. \\
+SH-08 & Consulta indirecta al propietario & Su relación con el local (crédito, razón social) la maneja el propietario. \\
+SH-09, SH-12 & Consulta indirecta a la gerente & No usan el sistema y su interés es indirecto. \\
+SH-10, SH-11 & Análisis documental & Su información está en la documentación del sistema actual y en la normativa publicada del SRI. \\
+\end{longtable}
+\normalsize
+
+\subsection{Cronograma de sesiones}
+
+\footnotesize
+\begin{longtable}{@{}L{2.6cm}L{2.0cm}L{1.7cm}L{1.6cm}L{1.4cm}L{4.4cm}@{}}
+\caption{Cronograma de sesiones de elicitación.}\label{tab:sesiones}\\
+\toprule
+\textbf{Sesión} & \textbf{Técnica} & \textbf{Partes} & \textbf{Resp.} & \textbf{Semana} & \textbf{Artefacto esperado} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Sesión} & \textbf{Técnica} & \textbf{Partes} & \textbf{Resp.} & \textbf{Semana} & \textbf{Artefacto esperado} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+ACTA-ELI-CAJ-01 & Entrevista & SH-01 & Allan & 4 (19/11, 16 min) & Audio y transcripción anonimizada \\
+ACTA-ELI-CAJ-02 & Entrevista & SH-04 & Winston & 4 (19/11, 13 min) & Audio y transcripción anonimizada \\
+ACTA-ELI-ADM-01 & Entrevista & SH-03 & José & 4 (19/11, 33 min) & Audio y transcripción anonimizada \\
+CUE-01 & Cuestionario & SH-01, SH-04 & Danela & 5 & Tabulación de respuestas \\
+CUE-02 & Cuestionario & SH-06, SH-07 & Danela & 5 & Tabulación y lista de nombres locales \\
+OBS-01 & Observación & SH-01, SH-04 & Allan & 5 & Registro de 10 transacciones en hora pico \\
+ACTA-ELI-ADM-02 & Entrevista & SH-02 & José & 6 & Transcripción y reglas de reposición \\
+ACTA-ELI-INV-01 & Entrevista & SH-05 & Winston & 6 & Transcripción y flujo de ingreso de productos \\
+TAL-01 & Taller & SH-01, SH-03, SH-04 & Allan y José & 7 & Minuta con las alternativas aceptadas y rechazadas \\
+DOC-01 & Análisis documental & SH-10, SH-11 & Winston & 6 & Resumen de la normativa y de la integración actual \\
+\end{longtable}
+\normalsize
+
+\subsection{Resultados preliminares de las entrevistas}
+
+Las tres entrevistas se aplicaron el 19 de noviembre de 2026 con la guía ACTA-ELI-01: la ficha A a la cajera con experiencia (16 minutos) y al vendedor nuevo (13 minutos), y la ficha B al propietario (33 minutos). Las dos entrevistas con la ficha A duraron menos que los 30 a 45 minutos previstos en la guía. La cajera respondió de forma breve y directa, y en ACTA-ELI-CAJ-02 varias preguntas quedaron sin respuesta. Esto confirma la necesidad de complementar las entrevistas con la observación y el cuestionario. Los resultados principales son los siguientes.
+
+\begin{itemize}
+\item \textbf{La asesoría es el valor del negocio.} La cajera afirma que los clientes buscan el local porque reciben asesoría y no solo el producto (ACTA-ELI-CAJ-01); el propietario lo confirma (ACTA-ELI-ADM-01).
+\item \textbf{El conocimiento está concentrado.} La cajera aprendió con capacitación y experiencia; el vendedor nuevo tarda de cinco a diez minutos por consulta y otra vendedora con experiencia es quien más orienta a los clientes (ACTA-ELI-CAJ-02).
+\item \textbf{Conflicto sobre las sugerencias.} El vendedor nuevo considera útiles las sugerencias en cualquier momento de la venta (ACTA-ELI-CAJ-02). La cajera y el propietario rechazan que el sistema recomiende sustitutos, porque un error puede dañar el equipo, y prefieren conseguir el producto exacto (ACTA-ELI-CAJ-01, ACTA-ELI-ADM-01). Ambos aceptan los complementos. Este conflicto se resolvió en el alcance: la PVIA sugiere complementos, informa equivalencias y deja la decisión al vendedor (RE-02).
+\item \textbf{Supuestos corregidos.} No se confirmaron el lector de código de barras, la impresora térmica ni la pasarela de cobros que suponía la práctica de la Unidad~I (Sección~\ref{sec:contexto}).
+\end{itemize}
+
+\subsection{Limitaciones del levantamiento}
+
+\begin{itemize}
+\item El vendedor nuevo no pudo responder las preguntas sobre el software, la impresora y las contingencias porque llevaba poco tiempo en el puesto (ACTA-ELI-CAJ-02). Esas preguntas se repetirán con la gerente y el digitador.
+\item En la entrevista al propietario la pregunta sobre IA se planteó como una IA que reemplaza a los empleados, lo que pudo reforzar su rechazo. En el taller las alternativas se presentarán como apoyo al vendedor, sin mencionar el reemplazo.
+\item Algunas preguntas del bloque A4 de la guía describen ya una solución (sugerencias del sistema), lo que contradice el principio de no imponer soluciones de la misma guía. En las próximas sesiones se preguntará primero por el problema.
+\item Los tiempos y frecuencias son declarados, no medidos. La observación en sitio y los cuestionarios darán las líneas base de los objetivos OBN-01 a OBN-04.
+\end{itemize}
