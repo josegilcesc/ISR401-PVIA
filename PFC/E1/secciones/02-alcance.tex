@@ -1,5 +1,59 @@
 % Sección a cargo de: Gilces Carranza José Ignacio
 \section{Alcance y restricciones}\label{sec:alcance}
 
-Sección en elaboración.
+El alcance indica qué capacidades forman parte de la PVIA y cuáles no. Se definió a partir de la visión de la Sección~\ref{sec:ficha} y de lo encontrado en las tres entrevistas, y se revisará con el propietario antes de especificar requisitos.
 
+\subsection{Dentro del alcance}
+
+\begin{enumerate}[label=AL-\arabic*, leftmargin=*]
+\item Catálogo de productos con código, sección de percha, marca, atributos técnicos (por ejemplo, potencia en HP, tensión, corriente y dimensiones) y sinónimos locales de cada producto.
+\item Búsqueda de productos por código, por nombre técnico y por nombre coloquial; cuando un término local corresponde a varios productos, como \emph{automático}, la plataforma muestra todas las opciones con sus características.
+\item Registro de la venta en mostrador y de proformas, con las tres categorías de precio del local: cliente final, integrador y cliente especial (ACTA-ELI-ADM-01).
+\item Sugerencia de productos complementarios habituales, por ejemplo filtros al vender una bomba, que el vendedor acepta o descarta.
+\item Consulta de productos con características técnicas equivalentes a uno agotado, presentada como información de apoyo; la decisión de ofrecer un sustituto es siempre del vendedor.
+\item Control de existencias por producto y registro de ingresos de mercadería.
+\item Reportes de ventas por cliente y de rotación de productos por mes (ACTA-ELI-ADM-01).
+\item Usuarios con permisos por rol: vendedor, digitador de inventario y administración.
+\end{enumerate}
+
+\subsection{Fuera del alcance}
+
+\begin{enumerate}[label=FA-\arabic*, leftmargin=*]
+\item Contabilidad general, declaraciones tributarias y nómina.
+\item Venta de productos con decisión automática de sustitución: la PVIA no reemplaza un producto en la venta sin la confirmación del vendedor.
+\item Promoción y publicidad en redes sociales, que el propietario mencionó como un uso posible de la inteligencia artificial pero que no forma parte del problema de mostrador.
+\item Gestión de cobros a crédito y cupos de clientes corporativos.
+\item Servicios técnicos de campo (instalación, perforación de pozos, armado de tableros).
+\end{enumerate}
+
+\subsection{Zona gris}
+
+Dos capacidades quedan pendientes de decisión con el propietario, porque las entrevistas mostraron que hoy las resuelve el sistema contable del local:
+
+\begin{itemize}
+\item \textbf{Emisión de comprobantes electrónicos ante el SRI.} La cajera indica que el proveedor del sistema actual lo actualiza cuando cambia la normativa (ACTA-ELI-CAJ-01) y el propietario afirma que los errores con el SRI son mínimos (ACTA-ELI-ADM-01). Se evaluará si la PVIA emite comprobantes o si entrega la venta al sistema contable para que este los emita.
+\item \textbf{Reemplazo o convivencia con el sistema actual.} El propietario no planea reemplazar el sistema que usa hoy (ACTA-ELI-ADM-01). La alternativa preferida es que la PVIA conviva con él.
+\end{itemize}
+
+El equipo decidió no resolver estas dos capacidades por su cuenta, porque afectan la facturación del local y su relación con el proveedor del sistema actual. La decisión se tomará con el propietario en la semana~6 del cronograma (Tabla~\ref{tab:cronograma}), presentándole las ventajas y los riesgos de cada alternativa. Hasta entonces, ningún requisito sobre comprobantes electrónicos se especifica.
+
+\subsection{Restricciones}
+
+\begin{table}[H]
+\centering
+\caption{Restricciones conocidas del proyecto.}
+\label{tab:restricciones}
+\small
+\begin{tabularx}{\textwidth}{@{}L{1.2cm}L{2.6cm}X@{}}
+\toprule
+\textbf{ID} & \textbf{Tipo} & \textbf{Restricción y origen} \\
+\midrule
+RE-01 & Organizacional & La plataforma debe convivir con el sistema contable y de facturación que el local ya usa (ACTA-ELI-ADM-01). \\
+RE-02 & Negocio & Ninguna sugerencia puede sustituir la decisión del vendedor; el propietario y la cajera rechazan la recomendación automática de sustitutos (ACTA-ELI-ADM-01, ACTA-ELI-CAJ-01). \\
+RE-03 & Legal & El tratamiento de datos de clientes debe cumplir la Ley Orgánica de Protección de Datos Personales~\cite{lopdp2021}. \\
+RE-04 & Técnica & Debe funcionar en la computadora de uso comercial con la que cuenta el local y con la impresora que ya usan (ACTA-ELI-ADM-01, ACTA-ELI-CAJ-01). \\
+RE-05 & Operativa & La búsqueda debe responder de forma inmediata durante la atención; los entrevistados la describen como \emph{instantánea} (ACTA-ELI-CAJ-01, ACTA-ELI-CAJ-02). El umbral en segundos se fijará con la observación en sitio. \\
+RE-06 & Académica & El proyecto se desarrolla dentro del periodo académico, hasta la semana~17, con un equipo de cuatro estudiantes. \\
+\bottomrule
+\end{tabularx}
+\end{table}

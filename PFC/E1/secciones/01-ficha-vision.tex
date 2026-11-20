@@ -14,12 +14,13 @@ El documento sigue el proceso de ingeniería de requisitos de la norma ISO/IEC/I
 \toprule
 \textbf{Campo} & \textbf{Detalle} \\
 \midrule
+Sigla & PVIA (Plataforma de Ventas con Inteligencia Artificial). \\
 Nombre del sistema & \sistema{} para Establecimientos de Suministros Eléctricos en Quevedo. \\
-Organización cliente & \organizacion{}, establecimiento comercializador de materiales eléctricos ubicado en el cantón Quevedo, provincia de Los Ríos. \\
-Tipo de sistema & Sistema de información transaccional de ventas e inventario, con un módulo de recomendación de productos asistido por inteligencia artificial. \\
-Problema & En horas pico la facturación en mostrador es lenta, y el personal sin formación electrotécnica no siempre puede recomendar un producto compatible o un sustituto seguro cuando el artículo solicitado está agotado. Esto alarga la fila de atención y provoca ventas perdidas. \\
-Oportunidad & El conocimiento de los vendedores con experiencia sobre equivalencias, sustitutos y venta cruzada puede registrarse en el catálogo y ponerse a disposición de todo el personal en el momento de la venta. \\
-Objetivo general & Especificar los requisitos de una plataforma de ventas para \organizacion{} que agilice el cobro en mostrador y apoye al personal en la recomendación de productos eléctricos compatibles y disponibles en inventario. \\
+Organización cliente & Establecimiento comercializador de materiales eléctricos, bombas de agua y equipos de automatización ubicado en el cantón Quevedo, provincia de Los Ríos. Su nombre se reserva por el compromiso de anonimato asumido en el consentimiento informado; la carta de aceptación consta en el manifiesto de evidencias. \\
+Tipo de sistema & Sistema de información de ventas e inventario, con un módulo de apoyo a la asesoría técnica en mostrador. \\
+Problema & La asesoría técnica es el principal valor del negocio, pero depende del conocimiento acumulado por el personal con experiencia. Un vendedor nuevo tarda entre cinco y diez minutos en revisar catálogos para responder una consulta técnica (ACTA-ELI-CAJ-02), los clientes piden los materiales con nombres locales ambiguos como \emph{automático} o \emph{vela} (ACTA-ELI-CAJ-01) y algunos clientes regresan porque olvidaron un complemento (ACTA-ELI-CAJ-02). \\
+Oportunidad & Registrar en el catálogo los atributos técnicos, los sinónimos locales y las combinaciones de complementos que hoy solo conoce el personal con experiencia, para ponerlos a disposición de todo el personal en el momento de la venta. \\
+Objetivo general & Especificar los requisitos de una plataforma de ventas que apoye al personal de mostrador de \organizacion{} en la búsqueda de productos y en la asesoría técnica, dejando siempre la decisión final en manos del vendedor. \\
 Equipo & Arteaga Alava Danela Dayana, Cedeño Avila Winston Damian, Gilces Carranza José Ignacio (líder), Mendoza Palma Allan Jeremy. \\
 \bottomrule
 \end{tabularx}
@@ -30,8 +31,28 @@ Equipo & Arteaga Alava Danela Dayana, Cedeño Avila Winston Damian, Gilces Carra
 Para redactar la visión se usa la plantilla de palabras clave que Wiegers y Beatty recomiendan para la declaración de visión del producto~\cite{wiegers2013}:
 
 \begin{quote}
-\textit{Para} los cajeros, administradores y propietarios de establecimientos de suministros eléctricos en Quevedo, \textit{que} enfrentan demoras en la facturación en horas pico y pérdida de ventas por no poder recomendar componentes compatibles o sustitutos, \textit{la} \sistemacorto{} \textit{es un} sistema de gestión comercial \textit{que} agiliza el cobro en mostrador, emite los comprobantes electrónicos exigidos por el SRI y sugiere productos eléctricos equivalentes que tienen existencias reales en el inventario. \textit{A diferencia de} la consulta manual de catálogos impresos o de los sistemas de facturación que solo registran ventas, \textit{nuestro producto} une el control de inventario con la asistencia técnica en el momento de la venta, sin ofrecer artículos agotados.
+\textit{Para} el personal de mostrador y los administradores de establecimientos de suministros eléctricos en Quevedo, \textit{que} necesitan asesorar con rapidez a clientes que piden los materiales con nombres locales y que dependen del conocimiento de los vendedores con experiencia, \textit{la} PVIA \textit{es una} plataforma de ventas e inventario \textit{que} encuentra los productos por su nombre técnico o coloquial, muestra sus características técnicas y propone los complementos habituales con existencias reales. \textit{A diferencia de} los sistemas contables que el local usa hoy, que buscan por código y no guardan el conocimiento técnico, \textit{nuestro producto} pone ese conocimiento al alcance del vendedor nuevo sin reemplazar el criterio del vendedor con experiencia.
 \end{quote}
 
-% Pendiente (viernes): objetivos de negocio medibles (mínimo 3), con indicador,
-% línea base obtenida en la organización y meta.
+La versión anterior de la visión prometía sugerir sustitutos de forma automática. Se modificó después de las entrevistas: la cajera con experiencia (ACTA-ELI-CAJ-01) y el propietario (ACTA-ELI-ADM-01) consideran riesgoso que un sistema recomiende un sustituto, porque un error puede dañar el equipo del cliente, y prefieren conseguir el producto exacto en 24 a 48 horas. Por eso la PVIA informa y sugiere, pero no decide.
+
+\subsection{Objetivos de negocio}
+
+La Tabla~\ref{tab:objetivos} presenta los objetivos de negocio. Cada uno tiene un indicador, una línea base tomada de las entrevistas o, cuando la entrevista no permitió cuantificarla, el instrumento con el que se medirá. Las metas son propuestas del equipo y se validarán con el propietario.
+
+\begin{table}[H]
+\centering
+\caption{Objetivos de negocio medibles.}
+\label{tab:objetivos}
+\small
+\begin{tabularx}{\textwidth}{@{}L{1.1cm}L{3.6cm}L{3.4cm}X@{}}
+\toprule
+\textbf{ID} & \textbf{Objetivo} & \textbf{Indicador} & \textbf{Línea base y meta} \\
+\midrule
+OBN-01 & Reducir el tiempo que tarda un vendedor nuevo en responder una consulta técnica. & Minutos desde la pregunta del cliente hasta la respuesta del vendedor. & Base: 5 a 10 minutos con catálogos impresos (ACTA-ELI-CAJ-02). Meta: menos de 2 minutos, seis meses después de la implantación. \\
+OBN-02 & Reducir las visitas de regreso por complementos olvidados. & Clientes que regresan en la semana por un complemento de una compra anterior. & Base: ocurre con frecuencia, sin cifra (ACTA-ELI-CAJ-02); se medirá con la guía de observación del Anexo~\ref{anx:observacion}. Meta: reducirlas a la mitad respecto de la línea base medida. \\
+OBN-03 & Encontrar los productos por su nombre coloquial. & Porcentaje de términos locales registrados que el buscador asocia con el producto correcto. & Base: 0\,\%; el sistema actual busca por código (ACTA-ELI-CAJ-01). Meta: 90\,\% de los términos del glosario levantado en la elicitación. \\
+OBN-04 & Reducir las anulaciones de facturas por datos del cliente equivocados. & Facturas anuladas por mes a causa de razón social o datos incorrectos. & Base: frecuente en clientes con varias haciendas o razones sociales, sin cifra (ACTA-ELI-ADM-01); se medirá con el cuestionario del Anexo~\ref{anx:cuestionario}. Meta: reducción del 50\,\%. \\
+\bottomrule
+\end{tabularx}
+\end{table}
