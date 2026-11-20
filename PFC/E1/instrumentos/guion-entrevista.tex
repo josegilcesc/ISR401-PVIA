@@ -1,5 +1,115 @@
-% Sección a cargo de: Mendoza Palma Allan Jeremy
+% Instrumento a cargo de: Mendoza Palma Allan Jeremy
+% Basado en la guía de entrevistas del equipo ACTA-ELI-01
 \section{Instrumento 1: guion de entrevista semiestructurada}\label{anx:entrevista}
 
-Sección en elaboración.
+\textbf{Código del instrumento:} ACTA-ELI-01. \textbf{Duración estimada:} 30 a 45 minutos por sesión. \textbf{Participantes:} cajeros y vendedores de mostrador (SH-01), administrador (SH-02) y propietario (SH-03) de \organizacion{}.
 
+\subsection*{Principios de aplicación}
+\begin{enumerate}[label=\arabic*.]
+\item \textbf{Consentimiento y contexto.} Explicar que la sesión busca comprender el flujo real de trabajo con fines académicos y anónimos, sin evaluar el desempeño del trabajador. La entrevista se realiza solo después de firmar el consentimiento del Anexo~\ref{anx:consentimiento}.
+\item \textbf{Causa raíz.} Formular preguntas abiertas sin proponer soluciones tecnológicas. Si el entrevistado dice que el sistema es lento, preguntar qué paso genera la demora y cuántos segundos toma.
+\item \textbf{Jerga local.} Registrar literalmente los nombres coloquiales de los materiales (por ejemplo, \emph{breaker}, \emph{taipe}, \emph{boquilla}, \emph{contactora}).
+\item \textbf{Contingencias.} Anotar qué hace el personal cuando se cae el internet o falla la facturación electrónica del SRI.
+\end{enumerate}
+
+\subsection*{Guion de apertura}
+\begin{quote}\itshape
+Buenos días o buenas tardes. Mi nombre es [nombre del entrevistador], estudiante de Ingeniería de Software de la Universidad Técnica Estatal de Quevedo. Estamos desarrollando un proyecto académico sobre una plataforma de ventas con asistencia inteligente para negocios de materiales eléctricos en Quevedo. Queremos comprender cómo trabajan en su día a día, qué problemas enfrentan y qué haría útil una herramienta así. Su participación es voluntaria: puede no responder alguna pregunta o terminar la entrevista cuando lo desee. No hay respuestas correctas o incorrectas, y la información se usará solo con fines académicos, sin identificar al local ni al personal. ¿Acepta participar y nos permite grabar el audio para no perder detalles técnicos?
+\end{quote}
+
+\subsection*{Datos de la sesión}
+\begin{tabularx}{\textwidth}{@{}L{5cm}X@{}}
+\toprule
+Código de acta & ACTA-ELI-CAJ-\_\_\_ / ACTA-ELI-ADM-\_\_\_ \\
+Rol del entrevistado & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ (sin nombre) \\
+Tiempo en el puesto o en el negocio & \_\_\_ años \_\_\_ meses \\
+Fecha y hora & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+Entrevistador & \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+¿Autoriza la grabación de audio? & Sí \quad No \\
+\bottomrule
+\end{tabularx}
+
+\subsection*{Ficha A: cajero y vendedor de mostrador (SH-01)}
+
+\paragraph{Bloque A1. Rutina y ergonomía en mostrador.}
+\begin{enumerate}[label=A1.\arabic*, leftmargin=*]
+\item ¿Cuáles son sus responsabilidades durante el turno, desde que abre hasta que cierra? \emph{Objetivo: medir el nivel de interrupción mientras opera el sistema.}
+\item Descríbame paso a paso qué ocurre desde que un cliente llega al mostrador hasta que se retira con su compra y su comprobante. \emph{Objetivo: mapear el flujo actual e identificar tiempos muertos.}
+\item ¿En qué horarios se forman las filas más largas, cuántos clientes llegan a esperar y qué pasos toman más tiempo en esas horas? \emph{Objetivo: identificar los picos de carga en los que la velocidad del sistema es crítica.}
+\item ¿Cómo busca un producto en el sistema y cómo lo ubica físicamente en bodega? ¿Con qué frecuencia el sistema indica stock pero el producto está agotado? \emph{Objetivo: conocer el uso del lector de código de barras y los desfases de inventario.}
+\item ¿Cuánto espacio tiene en el mostrador para operar? ¿Prefiere trabajar solo con teclado y lector, sin ratón? \emph{Objetivo: validar la necesidad de operar el sistema solo con teclado.}
+\item ¿Qué herramientas usan hoy para registrar ventas y facturar, qué le cansa más al usarlas y qué pasó la última vez que una venta se complicó? \emph{Objetivo: detectar problemas de usabilidad e incidentes reales.}
+\end{enumerate}
+
+\paragraph{Bloque A2. Lenguaje local y perfil de clientes.}
+\begin{enumerate}[label=A2.\arabic*, leftmargin=*]
+\item ¿Quiénes son sus clientes más frecuentes y cómo cambia la forma de atender a cada uno? \emph{Objetivo: calibrar el nivel técnico de las recomendaciones.}
+\item ¿Con qué nombres coloquiales piden los materiales los clientes o electricistas? ¿Qué materiales generan confusión por tener varios nombres? \emph{Objetivo: construir el diccionario de sinónimos del dominio.}
+\item ¿Hay clientes que buscan siempre al mismo vendedor para que los asesore? ¿Por qué cree que ocurre? \emph{Objetivo: identificar conocimiento concentrado en vendedores con experiencia.}
+\end{enumerate}
+
+\paragraph{Bloque A3. Asesoría técnica, sustitutos y venta cruzada.}
+\begin{enumerate}[label=A3.\arabic*, leftmargin=*]
+\item ¿Con qué frecuencia los clientes le piden consejo sobre calibres de cable, amperajes de breaker, voltajes o compatibilidad? \emph{Objetivo: cuantificar la demanda de asesoría técnica en mostrador.}
+\item Cuando un cliente pide una recomendación, ¿qué datos le pregunta antes de sugerir un producto? \emph{Objetivo: conocer las variables de entrada que necesitaría el módulo de recomendación.}
+\item ¿En qué criterios técnicos o comerciales se basa para decidir qué producto recomendar? \emph{Objetivo: extraer las reglas de decisión del vendedor con experiencia.}
+\item Cuando un producto está agotado, ¿cómo decide qué sustituto ofrecer sin arriesgarse a un cortocircuito o a un reclamo? \emph{Objetivo: conocer los criterios de compatibilidad para sustitutos.}
+\item ¿Ofrece productos complementarios, como cinta aislante o terminales? ¿Cómo sabe cuáles ofrecer y con qué frecuencia vuelve un cliente porque olvidó uno? \emph{Objetivo: definir reglas de venta cruzada.}
+\item ¿Cómo aprendió a asesorar y cuánto tarda un vendedor nuevo en dominar las equivalencias del catálogo? Si tiene dudas, ¿a quién o a qué consulta y cuánto demora? \emph{Objetivo: medir la curva de aprendizaje y el tiempo de consulta.}
+\end{enumerate}
+
+\paragraph{Bloque A4. Confianza en las sugerencias y fallas de conexión.}
+\begin{enumerate}[label=A4.\arabic*, leftmargin=*]
+\item Si el sistema sugiriera productos complementarios o sustitutos, ¿en qué momento le sería útil verlos: al buscar el producto, al agregarlo o antes de cobrar? \emph{Objetivo: definir el momento en que se muestran las sugerencias.}
+\item ¿Qué información necesitaría ver en pantalla para confiar en una sugerencia? \emph{Objetivo: definir los datos que explican cada sugerencia.}
+\item ¿Qué tan rápido debería responder el sistema al buscar un producto y qué impresora de tickets usan? \emph{Objetivo: obtener tiempos de respuesta esperados.}
+\item ¿Con qué frecuencia falla el internet o se pone lento el sistema, y qué hacen cuando ocurre para no detener el cobro? \emph{Objetivo: conocer el procedimiento de contingencia actual.}
+\end{enumerate}
+
+\subsection*{Ficha B: administrador y propietario (SH-02 y SH-03)}
+
+\paragraph{Bloque B1. Inventario, abastecimiento y unidades.}
+\begin{enumerate}[label=B1.\arabic*, leftmargin=*]
+\item ¿Cuánto tiempo lleva operando el negocio, cuántas personas trabajan y cómo se reparten las responsabilidades? \emph{Objetivo: conocer la estructura de la organización.}
+\item ¿Cómo deciden qué cantidad de mercadería pedir y con qué frecuencia? \emph{Objetivo: conocer la lógica de reposición de stock.}
+\item ¿Qué productos nunca pueden faltar y cuáles se quedan estancados por baja rotación? \emph{Objetivo: identificar prioridades de inventario.}
+\item ¿Cómo manejan las unidades de medida: metros de cable, rollos, cajas o piezas sueltas? \emph{Objetivo: conocer las necesidades de cantidades fraccionadas y conversiones.}
+\item ¿Con qué frecuencia hay diferencias entre el inventario del sistema y la percha, y cómo anticipan los picos de demanda por temporada? \emph{Objetivo: identificar necesidades de auditoría de inventario.}
+\end{enumerate}
+
+\paragraph{Bloque B2. Facturación electrónica, pagos y normativa.}
+\begin{enumerate}[label=B2.\arabic*, leftmargin=*]
+\item ¿Qué parte de las ventas se factura con datos del cliente y qué parte a consumidor final? ¿Manejan precios diferenciados o ventas a crédito? \emph{Objetivo: definir la captura de datos del cliente y las listas de precios.}
+\item ¿Cómo emiten y firman hoy las facturas electrónicas y qué problemas tienen con el servicio del SRI? \emph{Objetivo: conocer la integración con el SRI y sus fallas.}
+\item ¿Qué formas de pago aceptan y cómo hacen el cuadre de caja al cierre? \emph{Objetivo: conocer los medios de pago y el proceso de cierre.}
+\item ¿Qué hacen cuando un cliente pide anular una factura o devolver un material? \emph{Objetivo: conocer el proceso de notas de crédito y devoluciones.}
+\item ¿Qué datos de clientes y ventas registran, dónde los guardan y cómo los respaldan? \emph{Objetivo: identificar necesidades de privacidad y respaldo según la LOPDP.}
+\end{enumerate}
+
+\paragraph{Bloque B3. Personal y reglas para las sugerencias.}
+\begin{enumerate}[label=B3.\arabic*, leftmargin=*]
+\item ¿Qué tan difícil es conseguir personal de mostrador con conocimientos de electricidad? \emph{Objetivo: valorar la necesidad de apoyar al vendedor nuevo.}
+\item ¿Qué problemas o costos les ha causado que se venda un producto incompatible? \emph{Objetivo: dimensionar el costo de los errores de compatibilidad.}
+\item Si una herramienta sugiere sustitutos o complementos, ¿qué reglas le pondría para estar tranquilo como dueño? \emph{Objetivo: validar reglas como sugerir solo productos con stock disponible.}
+\end{enumerate}
+
+\paragraph{Bloque B4. Expectativas, reportes y viabilidad.}
+\begin{enumerate}[label=B4.\arabic*, leftmargin=*]
+\item ¿Qué podría ver o modificar un cajero frente a un administrador? \emph{Objetivo: definir permisos por rol.}
+\item ¿Desde qué equipos trabajarían y qué hardware tienen hoy en el local? \emph{Objetivo: conocer la infraestructura disponible.}
+\item ¿Cuánto podría destinar el negocio al mes para operar el sistema? \emph{Objetivo: conocer el límite de costo operativo.}
+\item ¿En cuánto tiempo esperaría ver menos fila en mostrador para considerar exitoso el proyecto, qué reportes necesita y qué función sería indispensable desde el primer día? \emph{Objetivo: obtener los criterios de éxito del proyecto.}
+\end{enumerate}
+
+\subsection*{Repreguntas de sondeo}
+\begin{itemize}
+\item ¿Me puede mostrar cómo lo hace actualmente?
+\item Cuando dice que es lento, ¿de cuántos segundos o minutos hablamos?
+\item ¿Qué pasó la última vez que ocurrió ese problema?
+\item ¿Con qué frecuencia pasa eso en una semana normal?
+\end{itemize}
+
+\subsection*{Guion de cierre}
+\begin{quote}\itshape
+Muchas gracias por su tiempo y por compartir su experiencia. Esta información nos ayudará a diseñar una solución ajustada a la realidad de los locales eléctricos de Quevedo. ¿Nos permitiría volver más adelante para mostrarle un prototipo y validar su funcionamiento?
+\end{quote}
