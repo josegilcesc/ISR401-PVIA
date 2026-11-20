@@ -9,18 +9,18 @@ Inteligencia Artificial para Establecimientos de Suministros Eléctricos en Quev
 
 ## Integrantes
 
-|Integrante|Rol|
-|-|-|
-|Gilces Carranza José Ignacio|Líder del equipo|
-|Arteaga Alava Danela Dayana|Integrante|
-|Cedeño Avila Winston Damian|Integrante|
-|Mendoza Palma Allan Jeremy|Integrante|
+| Integrante | Rol |
+|---|---|
+| Gilces Carranza José Ignacio | Líder del equipo |
+| Arteaga Alava Danela Dayana | Integrante |
+| Cedeño Avila Winston Damian | Integrante |
+| Mendoza Palma Allan Jeremy | Integrante |
 
 ## Índice de carpetas
 
-|Carpeta|Actividad|Documento principal|
-|-|-|-|
-|`PFC/E1/`|TA-PFC-E1: visión, alcance, partes interesadas, contexto y plan de elicitación|`PFC/E1/main.tex` → `PFC/E1/main.pdf`|
+| Carpeta | Actividad | Documento principal |
+|---|---|---|
+| `PFC/E1/` | TA-PFC-E1: visión, alcance, partes interesadas, contexto y plan de elicitación | `PFC/E1/main.tex` → `PFC/E1/main.pdf` |
 
 Estructura de cada entrega:
 
@@ -45,7 +45,8 @@ PFC/E1/
 **Dependencias (paquetes LaTeX):** `inputenc`, `fontenc`, `babel` (idioma
 `spanish`), `lmodern`, `geometry`, `setspace`, `fancyhdr`, `graphicx`,
 `booktabs`, `longtable`, `tabularx`, `array`, `multirow`, `xcolor`, `float`,
-`caption`, `enumitem`, `hyperref`. Estilo bibliográfico: `IEEEtran.bst`.
+`caption`, `enumitem`, `hyperref`, `amssymb`, `tikz` (bibliotecas `positioning`,
+`arrows.meta`, `shapes.geometric`, `fit`, `calc`). Estilo bibliográfico: `IEEEtran.bst`.
 En MiKTeX se instalan automáticamente en la primera compilación si está activada
 la opción *Install missing packages on-the-fly*.
 
@@ -65,7 +66,9 @@ y referencias cruzadas. El resultado es `PFC/E1/main.pdf`.
 
 ## Evidencias y datos personales
 
-Ningún dato personal de terceros se publica en este repositorio. Los originales
-se guardan en la carpeta institucional privada del equipo y se registran en
-`PFC/E1/evidencias/MANIFIESTO.md` con su huella SHA-256.
-
+Ningún dato personal de terceros se publica en este repositorio, y tampoco la
+identidad de la organización estudiada. Los formularios firmados y las
+grabaciones originales se guardan en un archivo cifrado, cuya contraseña solo
+conoce el docente, dentro de la carpeta institucional restringida del equipo.
+Cada archivo se registra en `PFC/E1/evidencias/MANIFIESTO.md` con su huella
+SHA-256.
