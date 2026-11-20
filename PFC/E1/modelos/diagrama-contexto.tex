@@ -1,0 +1,44 @@
+% Fuente editable del diagrama de contexto (TikZ).
+% Se incluye en secciones/04-contexto.tex con \input.
+% Línea continua: dentro de la frontera acordada. Línea discontinua: zona gris.
+\begin{tikzpicture}[
+  font=\scriptsize,
+  sistema/.style={draw, very thick, rounded corners=4pt, fill=green!10, align=center, minimum width=3.6cm, minimum height=2.2cm, font=\small\bfseries},
+  actor/.style={draw, rounded corners=8pt, fill=yellow!12, align=center, minimum width=2.6cm, minimum height=0.9cm},
+  externo/.style={draw, fill=blue!8, align=center, minimum width=3.0cm, minimum height=0.9cm},
+  gris/.style={draw, dashed, fill=black!4, align=center, minimum width=3.0cm, minimum height=0.9cm},
+  flujo/.style={-{Stealth[length=2mm]}, thin},
+  flujogris/.style={-{Stealth[length=2mm]}, thin, dashed},
+  etq/.style={font=\tiny, fill=white, inner sep=1pt, align=center}
+]
+  \node[sistema] (pvia) at (0,0) {PVIA\\[2pt]\normalfont\scriptsize Plataforma de Ventas\\[-1pt]\normalfont\scriptsize con apoyo de IA};
+
+  % Actores humanos (izquierda y arriba)
+  \node[actor] (caj)  at (-5.6, 2.4) {Cajera-vendedora\\con experiencia (SH-01)};
+  \node[actor] (nue)  at (-5.6, 0.8) {Vendedor nuevo\\(SH-04)};
+  \node[actor] (dig)  at (-5.6,-0.8) {Digitador de\\inventario (SH-05)};
+  \node[actor] (ger)  at (-5.6,-2.4) {Gerente o\\administradora (SH-02)};
+  \node[actor] (prop) at ( 0.0, 3.4) {Propietario (SH-03)};
+
+  % Sistemas y dispositivos externos (derecha y abajo)
+  \node[externo] (ia)   at ( 5.6, 2.4) {Servicio de inferencia\\de IA (EXT-01)};
+  \node[externo] (cont) at ( 5.6, 0.4) {Sistema contable y de\\facturación actual (EXT-02)};
+  \node[gris]    (sri)  at ( 5.6,-2.0) {Comprobantes electrónicos\\del SRI (EXT-03)};
+  \node[externo] (imp)  at ( 0.0,-3.4) {Impresora de comprobantes\\y proformas (EXT-04)};
+
+  % Flujos con actores
+  \draw[flujo] (caj.east) -- node[etq, above, sloped] {consulta, venta} ($(pvia.west)+(0,0.6)$);
+  \draw[flujo] ($(pvia.west)+(0,0.3)$) -- node[etq, below, sloped] {productos, sugerencias} (nue.east);
+  \draw[flujo] (dig.east) -- node[etq, below, sloped] {ingresos, atributos} ($(pvia.west)+(0,-0.3)$);
+  \draw[flujo] ($(pvia.west)+(0,-0.6)$) -- node[etq, below, sloped] {reportes de rotación} (ger.east);
+  \draw[flujo] (pvia.north) -- node[etq, right] {reportes por cliente} (prop.south);
+
+  % Flujos con sistemas externos
+  \draw[flujo] ($(pvia.east)+(0,0.6)$) -- node[etq, above, sloped] {consulta técnica} (ia.west);
+  \draw[flujo] ([yshift=-3pt]ia.west) -- node[etq, below, sloped] {sugerencias} ($(pvia.east)+(0,0.35)$);
+  \draw[flujo] ($(pvia.east)+(0,0)$) -- node[etq, above, sloped] {venta registrada} (cont.west);
+  \draw[flujo] ([yshift=-4pt]cont.west) -- node[etq, below, sloped] {precios, clientes} ($(pvia.east)+(0,-0.3)$);
+  \draw[flujogris] ($(pvia.east)+(0,-0.6)$) -- node[etq, below, sloped] {comprobante (por decidir)} (sri.west);
+  \draw[flujo] (cont.south) -- node[etq, right] {comprobante} (sri.north);
+  \draw[flujo] (pvia.south) -- node[etq, right] {comprobante, proforma} (imp.north);
+\end{tikzpicture}

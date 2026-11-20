@@ -5,29 +5,66 @@ Pohl define el contexto de un sistema como la parte de su entorno que es relevan
 
 \subsection{Límite del sistema}
 
-Dentro del límite de la \sistemacorto{} quedan el registro de ventas en mostrador, el control de inventario, la preparación de las consultas de recomendación sobre el catálogo local y el registro de auditoría de las operaciones. Fuera del límite quedan los actores humanos y los sistemas externos que solo intercambian información con la plataforma a través de interfaces.
+Dentro del límite de la PVIA quedan el catálogo con atributos técnicos y sinónimos locales, la búsqueda de productos, el registro de ventas y proformas, las sugerencias de complementos, el control de existencias y los reportes (Sección~\ref{sec:alcance}). Fuera del límite quedan los actores humanos y los sistemas que solo intercambian información con la plataforma.
 
 \subsection{Entidades externas}
 
-La Tabla~\ref{tab:externas} lista los sistemas y dispositivos externos identificados en la práctica de la Unidad~I. Los actores humanos que interactúan con el sistema son los roles SH-01, SH-02, SH-03, SH-05 y SH-07 de la Tabla~\ref{tab:stakeholders}.
+La versión preliminar de esta sección, tomada de la práctica de la Unidad~I, suponía un lector óptico de código de barras, una impresora térmica y una pasarela de cobros con tarjeta. Las entrevistas no confirmaron esos supuestos: la cajera busca los productos digitando su código y usa una impresora de oficina, no una térmica (ACTA-ELI-CAJ-01), y el propietario menciona pagos en efectivo, por transferencia y a crédito, sin pasarela de cobros (ACTA-ELI-ADM-01). En cambio, todos los entrevistados trabajan con un sistema contable y de facturación que el propietario no piensa reemplazar. La Tabla~\ref{tab:externas} presenta las entidades externas corregidas.
 
 \begin{table}[H]
 \centering
-\caption{Sistemas y dispositivos externos en el límite del sistema (versión preliminar).}
+\caption{Sistemas y dispositivos externos en el límite del sistema.}
 \label{tab:externas}
 \small
-\begin{tabularx}{\textwidth}{@{}L{1.4cm}L{3.6cm}X@{}}
+\begin{tabularx}{\textwidth}{@{}L{1.4cm}L{3.4cm}X@{}}
 \toprule
 \textbf{ID} & \textbf{Entidad externa} & \textbf{Información intercambiada} \\
 \midrule
-EXT-01 & Servicio externo de inferencia de IA & Envía la consulta técnica con los parámetros del catálogo disponible; recibe sugerencias de productos con su justificación de equivalencia. \\
-EXT-02 & Plataforma de comprobantes electrónicos del SRI & Envía el comprobante electrónico firmado; recibe el mensaje de recepción y autorización. \\
-EXT-03 & Pasarela de cobros electrónicos & Envía la solicitud de cobro con el monto total; recibe la aprobación o el rechazo. \\
-EXT-04 & Lector óptico de código de barras & Entrega al sistema el código del producto leído. \\
-EXT-05 & Impresora térmica de comprobantes & Recibe del sistema el detalle del comprobante de venta para imprimirlo. \\
+EXT-01 & Servicio externo de inferencia de IA & Recibe la consulta técnica con datos del catálogo, sin datos personales de clientes; devuelve sugerencias de productos con su justificación. \\
+EXT-02 & Sistema contable y de facturación actual & Entrega precios y datos de clientes; recibe la venta registrada en la PVIA para su facturación. \\
+EXT-03 & Plataforma de comprobantes electrónicos del SRI & Zona gris: hoy recibe los comprobantes desde EXT-02; se decidirá si la PVIA se comunica con ella directamente. \\
+EXT-04 & Impresora de comprobantes y proformas & Recibe el documento de venta o la proforma para imprimirlo. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-% Pendiente (viernes): diagrama de contexto exportado desde modelos/diagrama-contexto.puml
-% a figuras/, tabla de las ocho perspectivas con hallazgos de la organización.
+\subsection{Diagrama de contexto}
+
+La Figura~\ref{fig:contexto} muestra la PVIA, los actores con los que interactúa y los sistemas externos. Las líneas discontinuas indican la zona gris. La fuente editable está en \texttt{modelos/diagrama-contexto.tex}.
+
+\begin{figure}[H]
+\centering
+\input{modelos/diagrama-contexto}
+\caption{Diagrama de contexto de la PVIA.}
+\label{fig:contexto}
+\end{figure}
+
+\subsection{Ocho perspectivas del contexto}
+
+La Tabla~\ref{tab:perspectivas} recorre las ocho perspectivas del contexto con los hallazgos de las entrevistas y lo que cada hallazgo implica para la PVIA.
+
+\small
+\begin{longtable}{@{}L{2.2cm}L{6.6cm}L{4.9cm}@{}}
+\caption{Ocho perspectivas del contexto con hallazgos de la organización.}\label{tab:perspectivas}\\
+\toprule
+\textbf{Perspectiva} & \textbf{Hallazgo (fuente)} & \textbf{Implicación para la PVIA} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Perspectiva} & \textbf{Hallazgo (fuente)} & \textbf{Implicación para la PVIA} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Sujeto y datos & Los productos están codificados y ordenados en perchas por sección: bombas, automatización, luminarias (CAJ-01). Para recomendar una bomba la cajera pregunta de dónde se succiona el agua, el tipo de pozo, la altura, el consumo, el tamaño de la familia y el volumen a llenar (CAJ-01). El vendedor nuevo necesita ver modelo, potencia en HP y dimensiones (CAJ-02). & El catálogo debe guardar atributos técnicos por tipo de producto y las variables que el vendedor pregunta antes de recomendar. \\
+Uso & La cajera atiende sola: recibe, percha, ingresa y factura; sabe los precios de memoria y consulta el sistema solo para productos específicos (CAJ-01). El vendedor nuevo trabaja con el teclado porque es más rápido y tarda de cinco a diez minutos revisando catálogos (CAJ-02). & Dos perfiles de uso con necesidades distintas: la búsqueda rápida por teclado sirve a ambos; la asesoría asistida sirve sobre todo al vendedor nuevo. \\
+Entorno TI & El local usa un sistema contable comercial con soporte y servidor externos, que se actualiza solo ante cambios del SRI; las actualizaciones lo detienen de 5 a 10 minutos con aviso previo (CAJ-01). La computadora es de uso comercial y la información del sistema no siempre cuadra con la existencia física (ADM-01). La conexión a internet es estable (CAJ-02). & La PVIA convive con el sistema actual (EXT-02) y debe ayudar a cuadrar el inventario, no crear una segunda fuente de datos sin conciliar. \\
+Desarrollo & El propietario exige un sistema que se adapte a la forma de trabajar de cada empresa y señala que el dominio de automatización y bombas es más complejo que el de una tienda común (ADM-01). El equipo cuenta con cuatro estudiantes y plazo hasta la semana 17. & Priorizar un alcance pequeño y configurable; el catálogo técnico requiere la participación del personal con experiencia. \\
+Física & La hora pico va de 11:00 a 15:00, con dos o tres clientes en espera (CAJ-01). La empresa tiene tres puntos de distribución (ADM-01). & La búsqueda no puede alargar la atención en hora pico; queda por confirmar si la PVIA atiende uno o varios puntos. \\
+Social y cultural & Los clientes usan nombres locales: \emph{automático} para un presostato, \emph{vela} para un seccionador y \emph{bomba bala} para una bomba sumergible. \emph{Automático} puede referirse a un presostato, un contactor o un relé (CAJ-01). El vendedor nuevo no es de Quevedo y desconoce esos términos (CAJ-02). El propietario desconfía de que la IA pueda asesorar técnicamente (ADM-01). & Un glosario de sinónimos locales; ante un término ambiguo se muestran todas las opciones. La IA se presenta como apoyo al vendedor, no como su reemplazo. \\
+Legal & Todas las ventas se facturan con datos del cliente; la informalidad desapareció por la normativa (ADM-01). El local guarda razón social e historial de compras de sus clientes, con respaldo en un servidor externo (ADM-01). Las anulaciones y notas de crédito son frecuentes cuando un cliente tiene varias razones sociales (ADM-01). & Cumplir la LOPDP~\cite{lopdp2021}: no enviar datos personales al servicio de IA (EXT-01). Facilitar la elección de la razón social correcta antes de facturar. \\
+Económica y organizacional & El local maneja tres categorías de precio: final, integrador y especial; compite con Santo Domingo y Guayaquil; vende a crédito con cupo (ADM-01). Su política es conseguir en 24 horas lo que no tiene (ADM-01) y la cajera prefiere traer el producto exacto en 24 a 48 horas antes que ofrecer un sustituto (CAJ-01). & Las tres listas de precio entran en el alcance. Ante un producto agotado, la PVIA debe mostrar también la opción de pedido, no solo equivalentes. \\
+\end{longtable}
+\normalsize
+
+Para abreviar, en la tabla se usan los sufijos de los códigos de sesión: CAJ-01 por ACTA-ELI-CAJ-01, CAJ-02 por ACTA-ELI-CAJ-02 y ADM-01 por ACTA-ELI-ADM-01.
