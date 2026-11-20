@@ -1,0 +1,93 @@
+% =====================================================================
+% PFC - Entrega 1 (TA-PFC-E1)
+% Ingeniería de Requerimientos (ISR-401) - UTEQ
+% Compilación: ver README.md en la raíz del repositorio
+% =====================================================================
+\documentclass[12pt,a4paper]{article}
+
+% ---------- Idioma y codificación ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{lmodern}
+
+% ---------- Página ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small UTEQ · ISR-401}
+\fancyhead[R]{\small TA-PFC-E1}
+\fancyfoot[C]{\thepage}
+
+% ---------- Tablas, figuras y listas ----------
+\usepackage{graphicx}
+\graphicspath{{figuras/}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{enumitem}
+
+% ---------- Enlaces ----------
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Utilidades ----------
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\sistema}{Plataforma de Ventas con Módulo de Recomendación basado en Inteligencia Artificial}
+\newcommand{\sistemacorto}{Plataforma de Ventas}
+% Nombre de la organización cliente (actualizar cuando se firme la carta)
+\newcommand{\organizacion}{[Nombre del establecimiento cliente]}
+
+% ---------- Datos de portada ----------
+\title{\textbf{Proyecto Fin de Curso -- Entrega 1}\\[0.3em]
+\large Visión, alcance, partes interesadas, contexto y plan de elicitación\\[0.3em]
+\large \sistema{} para Establecimientos de Suministros Eléctricos en Quevedo}
+\author{
+Arteaga Alava Danela Dayana \and
+Cedeño Avila Winston Damian \and
+Gilces Carranza José Ignacio (líder) \and
+Mendoza Palma Allan Jeremy\\[1em]
+\small Universidad Técnica Estatal de Quevedo -- Facultad de Ciencias de la Computación\\
+\small Carrera de Software -- Ingeniería de Requerimientos (ISR-401)\\
+\small Docente: Gleiston Cicerón Guerrero Ulloa, PhD
+}
+\date{Noviembre de 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\newpage
+
+% ---------- Cuerpo del documento ----------
+\input{secciones/01-ficha-vision}
+\input{secciones/02-alcance}
+\input{secciones/03-partes-interesadas}
+\input{secciones/04-contexto}
+\input{secciones/05-elicitacion}
+\input{secciones/06-etica-datos}
+\input{secciones/07-gestion}
+\input{secciones/08-riesgos}
+\input{secciones/09-declaracion-ia}
+
+% ---------- Referencias ----------
+\bibliographystyle{IEEEtran}
+\bibliography{referencias}
+
+% ---------- Anexos: instrumentos ----------
+\appendix
+\input{instrumentos/guion-entrevista}
+\input{instrumentos/cuestionario}
+\input{instrumentos/guia-observacion}
+\input{instrumentos/consentimiento}
+
+\end{document}
