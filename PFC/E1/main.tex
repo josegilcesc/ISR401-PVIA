@@ -38,12 +38,6 @@
 % ---------- Enlaces ----------
 \usepackage[hidelinks]{hyperref}
 
-% ---------- Paleta institucional UTEQ ----------
-\definecolor{uteqverde}{HTML}{0B7A3B}
-\definecolor{uteqverdeosc}{HTML}{075C2C}
-\definecolor{uteqoro}{HTML}{D4A017}
-\definecolor{uteqgris}{HTML}{F2F4F2}
-
 % ---------- Utilidades ----------
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcommand{\sistema}{Plataforma de Ventas con Módulo de Recomendación basado en Inteligencia Artificial}
@@ -59,113 +53,50 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,calc}
 
+% ---------- Datos de portada ----------
+\title{\textbf{Proyecto Fin de Curso -- Entrega 1}\\[0.3em]
+\large Visión, alcance, partes interesadas, contexto y plan de elicitación\\[0.3em]
+\large PVIA: \sistema{} para Establecimientos de Suministros Eléctricos en Quevedo}
+\author{
+Arteaga Alava Danela Dayana \and
+Cedeño Avila Winston Damian \and
+Gilces Carranza José Ignacio (líder) \and
+Mendoza Palma Allan Jeremy\\[1em]
+\small Universidad Técnica Estatal de Quevedo -- Facultad de Ciencias de la Computación\\
+\small Carrera de Software -- Ingeniería de Requerimientos (ISR-401)\\
+\small Docente: Gleiston Cicerón Guerrero Ulloa, PhD
+}
+\date{Noviembre de 2026}
+
 \begin{document}
-	
-	% =====================================================================
-	% PORTADA INSTITUCIONAL
-	% =====================================================================
-	\begin{titlepage}
-		\singlespacing
-		\centering
-		
-		% Encabezado institucional (si existe figuras/logoband.png lo muestra automáticamente)
-		\IfFileExists{figuras/logoband.png}{%
-			\includegraphics[width=0.95\textwidth]{logoband.png}\\[0.5cm]
-		}{%
-			{\Large\bfseries\color{uteqverdeosc} UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}\\[0.2cm]
-		}
-		{\normalsize\bfseries FACULTAD DE CIENCIAS DE LA COMPUTACIÓN}\\[0.1cm]
-		{\normalsize CARRERA DE INGENIERÍA DE SOFTWARE}\\[0.35cm]
-		{\color{uteqverde}\rule{\textwidth}{1.5pt}}\\[-0.35cm]
-		{\color{uteqoro}\rule{\textwidth}{0.8pt}}
-		
-		\vspace{0.9cm}
-		
-		% Etiqueta de actividad
-		{\small\bfseries\color{uteqverde} PROYECTO FIN DE CURSO · ENTREGA 1 (TA-PFC-E1)}\\[0.45cm]
-		
-		% Título principal del proyecto
-		{\LARGE\bfseries\color{uteqverdeosc} \sistemacorto{}: \sistema{}}\\[0.25cm]
-		{\large\bfseries para Establecimientos de Suministros Eléctricos en Quevedo}\\[0.35cm]
-		{\normalsize\itshape Visión, alcance, partes interesadas, contexto y plan de elicitación}
-		
-		\vspace{0.9cm}
-		
-		% Tabla de datos académicos y técnicos del entregable
-		\renewcommand{\arraystretch}{1.3}
-		{\small
-			\begin{tabularx}{\textwidth}{>{\bfseries\color{uteqverdeosc}}L{0.31\textwidth} X}
-				\toprule
-				\rowcolor{uteqgris}
-				Asignatura & Ingeniería de Requerimientos (ISR-401) \\
-				Nivel y paralelo & 4.\textsuperscript{o} Nivel · Paralelo B \\
-				\rowcolor{uteqgris}
-				Período académico & Segundo Período Académico Ordinario (SPA) 2026--2027 \\
-				Docente & Gleiston Cicerón Guerrero Ulloa, PhD (\texttt{gguerrero@uteq.edu.ec}) \\
-				\rowcolor{uteqgris}
-				Estándares de referencia & ISO/IEC/IEEE 29148:2018 · ISO/IEC 25010:2023 · SWEBOK v4.0 \\
-				Repositorio del equipo & \url{https://github.com/josegilcesc/isr401-pfc-grupo01} \\
-				\rowcolor{uteqgris}
-				Versión del documento & 1.0 (Entrega 1) \\
-				\bottomrule
-			\end{tabularx}
-		}
-		
-		\vspace{0.85cm}
-		
-		% Tabla de integrantes del equipo
-		{\small\bfseries\color{uteqverdeosc} INTEGRANTES DEL EQUIPO}\\[0.25cm]
-		{\small
-			\begin{tabularx}{\textwidth}{X L{0.22\textwidth} L{0.33\textwidth}}
-				\toprule
-				\rowcolor{uteqverde}
-				\textcolor{white}{\textbf{Apellidos y nombres}} &
-				\textcolor{white}{\textbf{Rol}} &
-				\textcolor{white}{\textbf{Correo institucional}} \\
-				\midrule
-				Gilces Carranza José Ignacio & Líder del equipo & \texttt{jgilcesc3@uteq.edu.ec} \\
-				\rowcolor{uteqgris}
-				Arteaga Alava Danela Dayana & Integrante & \texttt{darteagaa@uteq.edu.ec} \\
-				Cedeño Avila Winston Damian & Integrante & \texttt{wcedenoa2@uteq.edu.ec} \\
-				\rowcolor{uteqgris}
-				Mendoza Palma Allan Jeremy & Integrante & \texttt{amendozap10@uteq.edu.ec} \\
-				\bottomrule
-			\end{tabularx}
-		}
-		
-		\vfill
-		
-		% Pie de portada
-		{\color{uteqoro}\rule{0.6\textwidth}{0.6pt}}\\[0.25cm]
-		{\normalsize\bfseries Quevedo, Los Ríos, Ecuador}\\[0.1cm]
-		{\normalsize Noviembre de 2026}
-	\end{titlepage}
-	
-	% Reinicia numeración para el índice y cuerpo
-	\setcounter{page}{1}
-	\tableofcontents
-	\newpage
-	
-	% ---------- Cuerpo del documento ----------
-	\input{secciones/01-ficha-vision}
-	\input{secciones/02-alcance}
-	\input{secciones/03-partes-interesadas}
-	\input{secciones/04-contexto}
-	\input{secciones/05-elicitacion}
-	\input{secciones/06-etica-datos}
-	\input{secciones/07-gestion}
-	\input{secciones/08-riesgos}
-	\input{secciones/09-declaracion-ia}
-	
-	% ---------- Referencias ----------
-	\bibliographystyle{IEEEtran}
-	\bibliography{referencias}
-	
-	% ---------- Anexos: instrumentos ----------
-	\appendix
-	\input{instrumentos/guion-entrevista}
-	\input{instrumentos/cuestionario}
-	\input{instrumentos/guia-observacion}
-	\input{instrumentos/consentimiento}
-	
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\newpage
+
+% ---------- Cuerpo del documento ----------
+\input{secciones/01-ficha-vision}
+\input{secciones/02-alcance}
+\input{secciones/03-partes-interesadas}
+\input{secciones/04-contexto}
+\input{secciones/05-elicitacion}
+\input{secciones/06-etica-datos}
+\input{secciones/07-gestion}
+\input{secciones/08-riesgos}
+\input{secciones/10-conclusiones}
+\input{secciones/09-declaracion-ia}
+
+% ---------- Referencias ----------
+\bibliographystyle{IEEEtran}
+\bibliography{referencias}
+
+% ---------- Anexos: instrumentos ----------
+\appendix
+\input{instrumentos/guion-entrevista}
+\input{instrumentos/cuestionario}
+\input{instrumentos/guia-observacion}
+\input{instrumentos/consentimiento}
+
 \end{document}
